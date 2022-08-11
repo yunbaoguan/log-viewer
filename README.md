@@ -8,12 +8,18 @@ A configuration file should be provided: /opt/logviewer/config.conf
 
 ```
     docker run -d --name=logviewer \
+        -p 8111:8111 \
         -v /path/to/config.conf:/opt/logviewer/config.conf:ro \
         yunbaoguan/log-viewer 
 
 ```
 
-Existing config.conf is place here for reference:
+Point your browser to and enjoy: http://localhost:8111
+
+
+## Existing config.conf
+
+Existing configuration is place here for reference:
 
 ```
 log-viewer.server.port=8111 // A port to bind Web UI

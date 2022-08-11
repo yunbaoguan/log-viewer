@@ -9,5 +9,8 @@ RUN rm -f /tmp/log-viewer-1.0.3.tar.gz
 # move expanded directory to a nicer location
 RUN mv /opt/log-viewer-1.0.3 /opt/logviewer
 
+# existing scripts is not sh-friendly, rewritten
+COPY scripts/logviewer.sh /opt/logviewer/
+
 WORKDIR /opt/logviewer
 CMD /opt/logviewer/logviewer.sh
